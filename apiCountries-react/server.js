@@ -9,20 +9,20 @@ app.use(cors())
 const port = 8000;
 
 app.get('/countries/:name', (req, res) => {
-    let pays = req.params.pays
 
-    let resultCountries = {}
+    let name = req.params.name
+    console.log(name);
+    let resultCountries = []
         for (let i = 0; i < countries.length; i++) {
-    
             const curCountries = countries[i];
-    
-            if (curCountries === pays) {
-                
-                resultCountries= countries;
+            if (curCountries.name.toLocaleLowerCase() === name) {
+                resultCountries.push(curCountries)
             }
             
         }
-    
+        res.json({
+            resultCountries
+        })
 })
 
 app.listen(port, () => {
