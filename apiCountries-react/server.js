@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-var dataCountries = require('./dataCountries')
+const countries = require('./dataCountries')
 
 const app = express();
 
@@ -8,8 +8,21 @@ app.use(cors())
 
 const port = 8000;
 
-app.get('/countries', (req, res) => {
-    res.json({dataCountries})
+app.get('/countries/:name', (req, res) => {
+    let pays = req.params.pays
+
+    let resultCountries = {}
+        for (let i = 0; i < countries.length; i++) {
+    
+            const curCountries = countries[i];
+    
+            if (curCountries === pays) {
+                
+                resultCountries= countries;
+            }
+            
+        }
+    
 })
 
 app.listen(port, () => {
