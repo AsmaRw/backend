@@ -1,28 +1,40 @@
 const countries = [
     {
-        name : 'france',
-        flag: 'https://restcountries.eu/data/fra.svg',
-        capital: 'Paris',
-        region: 'Europe',
-        population: 66710000
+        name: "Afghanistan",
+        capital: "Kabul",
+        region: "Asia",
+        population: 27657145,
+        flag: "https://restcountries.eu/data/afg.svg"
     },
     {
-        name: 'brazil',
-        flag: 'https://restcountries.eu/data/bra.svg',
-        capital: 'Brasília',
-        region: 'Americas',
-        population: 206135893
+        name: "Åland Islands",
+        capital: "Mariehamn",
+        region: "Europe",
+        population: 28875,
+        flag: "https://restcountries.eu/data/ala.svg"
     },
     {
-        name: 'croatia',
-        flag: 'https://restcountries.eu/data/bra.svg',
-        capital: 'Zagreb',
-        region: 'Europe',
-        population: 4190669
-    }
+        name: "Albania",
+        capital: "Tirana",
+        region: "Europe",
+        population: 2886026,
+        flag: "https://restcountries.eu/data/alb.svg"
+    },
+    {
+        name: "Algeria",
+        capital: "Algiers",
+        region: "Africa",
+        population: 40400000,
+        flag: "https://restcountries.eu/data/dza.svg"
+    },
+    {
+        name: "American Samoa",
+        capital: "Pago Pago",
+        region: "Oceania",
+        population: 57100,
+        flag: "https://restcountries.eu/data/asm.svg"
+    },
+    // all the other countries, use the code in script.js to get them
 ]
 
-
-
-
-module.exports = countries
+module.exports = { countries }
