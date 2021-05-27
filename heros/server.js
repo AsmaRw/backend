@@ -20,6 +20,20 @@ app.get("/heros", (req, res) => {
 })
 
 
+
+app.get("/heros/:name", (req, res) => {
+
+    const herosName = req.params.herosName
+
+    const dataHeros = heros.find(elem => {
+        console.log("heros.find current elem", elem);
+
+        return elem.name === herosName
+    })
+
+    res.json(dataHeros)
+})
+
 app.listen(port, () => {
     console.log("Server à l'écoute dans le port " + port);
 })
