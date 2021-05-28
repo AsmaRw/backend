@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const port = 9005
+const port = 8899
 
 
 app.use(function (req, res, next) {
@@ -21,16 +21,17 @@ app.get("/heros", (req, res) => {
 
 
 
-app.get("/heros/:name", (req, res) => {
-
+app.get("/heros/:herosName", (req, res) => {
     const herosName = req.params.herosName
-
-    const dataHeros = heros.find(elem => {
-        console.log("heros.find current elem", elem);
-
-        return elem.name === herosName
+    console.log('herosname', herosName);
+    
+    const dataHeros = heros.find( elem => {
+        console.log('elem', elem);
+        
+        return elem.name.toLocaleLowerCase() === herosName.toLocaleLowerCase()
     })
-
+    
+    console.log('data', dataHeros);
     res.json(dataHeros)
 })
 
