@@ -95,67 +95,67 @@ db.languages.insert({
 // students_Id
 
 db.students_languages.insert({
-   students_id: 1,
-   languages_id: 1
+    students_id: 1,
+    languages_id: 1
 })
 db.students_languages.insert({
-   students_id: 1,
-   languages_id: 2
-})
-
-db.students_languages.insert({
-   students_id: 2,
-   languages_id: 1
+    students_id: 1,
+    languages_id: 2
 })
 
 db.students_languages.insert({
-   students_id: 3,
-   languages_id: 1
+    students_id: 2,
+    languages_id: 1
 })
 
 db.students_languages.insert({
-   students_id: 4,
-   languages_id: 1
+    students_id: 3,
+    languages_id: 1
 })
 
 db.students_languages.insert({
-   students_id: 4,
-   languages_id: 2
+    students_id: 4,
+    languages_id: 1
 })
 
 db.students_languages.insert({
-   students_id: 4,
-   languages_id: 4
+    students_id: 4,
+    languages_id: 2
 })
 
 db.students_languages.insert({
-   students_id: 4,
-   languages_id: 5
+    students_id: 4,
+    languages_id: 4
 })
 
 db.students_languages.insert({
-   students_id: 5,
-   languages_id: 1
+    students_id: 4,
+    languages_id: 5
 })
 
 db.students_languages.insert({
-   students_id: 5,
-   languages_id: 5
+    students_id: 5,
+    languages_id: 1
 })
 
 db.students_languages.insert({
-   students_id: 6,
-   languages_id: 1
+    students_id: 5,
+    languages_id: 5
 })
 
 db.students_languages.insert({
-   students_id: 6,
-   languages_id: 2
+    students_id: 6,
+    languages_id: 1
 })
 
 db.students_languages.insert({
-   students_id: 6,
-   languages_id: 3
+    students_id: 6,
+    languages_id: 2
+})
+
+db.students_languages.insert({
+    students_id: 6,
+    languages_id: 3
 })
 
 //
