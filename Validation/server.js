@@ -1,14 +1,9 @@
-
-const express = require("express");
-const expressHandlebars = require("express-handlebars");
-const expressValidator = require("express-validator");
+const express = require("express")
+const cors = require("cors")
+const mongoose = require("mongoose")
+const { debug } = require("./middlewares/debug")
 const { user } = require("./model/user")
-const expressValidator = require("express-validator");
-const passwordValidator = require('password-validator');
 
-const app = express();
-
-app.use(express.json());
 
 mongoose.connect("mongodb://localhost:27017/user", (err) => {
     if (err) {
@@ -17,6 +12,16 @@ mongoose.connect("mongodb://localhost:27017/user", (err) => {
         console.log("I'm connected to the database");
     }
 })
+
+const port = 8888
+
+const app = express()
+
+app.use(cors())
+
+app.use(express.json())
+
+app.use(debug)
 
 
 router.get("/", debug, async (req, res) => {
@@ -34,6 +39,6 @@ router.get("/", debug, async (req, res) => {
 })
 
 
-app.listen(8000, () => {
-    console.log('Server started');
-});
+app.listen(port, () => {
+    console.log("Server is listening at port ", port);
+})
