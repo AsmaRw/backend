@@ -2,7 +2,7 @@ const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
 const { debug } = require("./middlewares/debug")
-const { user } = require("./model/user")
+const {People} = require("./model/user")
 
 
 mongoose.connect("mongodb://localhost:27017/user", (err) => {
@@ -24,9 +24,9 @@ app.use(express.json())
 app.use(debug)
 
 
-router.get("/", debug, async (req, res) => {
+app.get("/", debug, async (req, res) => {
     try {
-        const users = await user.find().exec()
+        const users = await People.find().exec()
 
         res.json(users)
     } catch (error) {
