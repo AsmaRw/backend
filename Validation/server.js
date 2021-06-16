@@ -5,13 +5,13 @@ const { debug } = require("./middlewares/debug")
 const {People} = require("./model/user")
 
 
-mongoose.connect("mongodb://localhost:27017/user", (err) => {
-    if (err) {
-        console.error(err)
-    } else {
-        console.log("I'm connected to the database");
-    }
-})
+// mongoose.connect("mongodb://localhost:27017/user", (err) => {
+//     if (err) {
+//         console.error(err)
+//     } else {
+//         console.log("I'm connected to the database");
+//     }
+// })
 
 const port = 8888
 
