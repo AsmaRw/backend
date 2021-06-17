@@ -1,5 +1,8 @@
-const express = require("express")
-const router = express.Router()
 const expressValidator = require("express-validator");
-const { newRoute } = require('../controllers/Control')
 
+app.post("/users/add",
+    expressValidator.body("username").isLength({ min: 4 }),
+    expressValidator.body("email").isEmail(),
+    expressValidator.body("age").isInt().isLength(({ min: 2, max: 2 })),
+    expressValidator.body("city")
+)
