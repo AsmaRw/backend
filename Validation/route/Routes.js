@@ -1,5 +1,7 @@
 const expressValidator = require("express-validator");
 
+
+
 app.post("/users/add",
     expressValidator.body("username").isLength({ min: 4 }),
     expressValidator.body("email").isEmail(),

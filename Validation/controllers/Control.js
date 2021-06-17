@@ -1,6 +1,7 @@
 const expressValidator = require("express-validator");
 const City = require("../models/user");
 
+
 const newRoute = async (req, res) => {
     try {
         const errors = expressValidator.validationResult(req);
