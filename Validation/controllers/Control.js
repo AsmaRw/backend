@@ -8,7 +8,7 @@ const newRoute = async (req, res) => {
         const people = req.body
 
 
-        /////
+        ///
 
         ////
 
