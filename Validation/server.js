@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(debug)
 
 
-app.get("/", debug, async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         const users = await People.find().exec()
 
@@ -28,6 +28,7 @@ app.get("/", debug, async (req, res) => {
         }, 500)
     }
 })
+
 
 
 app.listen(port, () => {
