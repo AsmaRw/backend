@@ -6,7 +6,7 @@ const newRoute = async (req, res) => {
         const error = expressValidator.validationResult(req);
         const yuser = req.body
     } catch (error) {
-        res.status(500).json({ errorMessage: "There was a problem !!!" })
+        res.status(500).json({ errorMessage: "error !!!" })
     }
 }
 
