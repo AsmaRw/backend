@@ -4,7 +4,7 @@ const { debug } = require("./middlewares/debug")
 const {People} = require("./model/user")
 
 
-const port = 8888
+const port = 9000
 
 const app = express()
 
