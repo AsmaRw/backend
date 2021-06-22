@@ -3,6 +3,11 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const { debug } = require("./middleware/debug")
 
+mongoose.connect("mongodb://localhost:27017/auth",{
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 const port = 8111
 
