@@ -2,19 +2,22 @@
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const config = require("./config.js")
 const { debug } = require("./middlewares/debug")
 
 
 //app config
-const port = 9003
+const port = config.port
 const app = express()
 
 
 //db config
-mongoose.connect("mongodb://localhost:27017/login", {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+mongoose.connect(config.mongoURL, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+    if (err) {
+        console.log("There was a problem when connection to the database")
+    } else {
+        console.log("I'm connected to the database")
+    }
 })
 
 
@@ -26,5 +29,7 @@ app.use(debug)
 
 //listen 
 app.listen(port, () => {
-    console.log("Server is listening at port ", port);
+    console.log("The server is waiting for requests")
 })
+
+
