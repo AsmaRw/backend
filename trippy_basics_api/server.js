@@ -1,59 +1,25 @@
 const express = require("express")
-const cors = require("cors")
 const mongoose = require("mongoose")
-const Hotel = require("./model/Hotel")
-const Restaurant = require("./model/Restaurant")
+const hotelRoutes = require("./routes/hotelRoutes")
+const restaurantRoutes = require("./routes/restaurantRoutes")
 
-//app config
-const app = express()
-const port = 8999
-
-//midleware
-const debug = (req, res, next) => {
-    console.log("I received a request!");
-    next()
-}
-app.use(express.json())
-app.use(cors())
-app.use(debug)
-
-
-//mongoose
-mongoose.connect("mongodb://localhost:27017/trippy_basics", (err) => {
+mongoose.connect("mongodb://localhost:27017/trip", { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (err) {
-        console.error(err);
+        console.log("There was a problem when connection to the database")
     } else {
-        console.log("I'm connected ")
+        console.log("I'm connected to the database")
     }
 })
 
-//api route Hotel
+const port = 9001
 
-app.get("/hotels", async (req, res) => {
-    try {
-        const hotels = await Hotel.find()
-        res.json(hotels)
-    } catch (err) {
-        console.error(err)
-        res.json({ errorMessage: "We have a problem" }, 500)
-    }
+const app = express()
 
-})
+app.use(express.json())
 
+app.use("/hotels", hotelRoutes)
+app.use("/restaurants", restaurantRoutes)
 
-// api route Restaurant
-
-app.get("/restaurants", async (req, res) => {
-    try {
-        const restaurants = await Restaurant.find()
-        res.json(restaurants)
-    } catch (err) {
-        console.error(err)
-        res.json({ errorMessage: "We have a problem" }, 500)
-    }
-})
-
-// listen
 app.listen(port, () => {
-    console.log("Server is listening at port ", port);
+    console.log("The server is waiting for requests")
 })
